@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:grauation_project_dashboard/core/helper_functions/on_generate_routes.dart';
+
+import 'features/dashboard/views/dashboard_view.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,12 +12,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Judson',
       ),
+      initialRoute: DashboardView.routeName,
+      onGenerateRoute: onGenerateRoutes,
+      debugShowCheckedModeBanner: false,
     );
   }
 }

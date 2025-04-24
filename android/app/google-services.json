@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "984320095104",
+    "project_id": "graduation-project-214bf",
+    "storage_bucket": "graduation-project-214bf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984320095104:android:9e7e4f1c8c7d4f3312c765",
+        "android_client_info": {
+          "package_name": "com.example.graduation_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "984320095104-4p501vvaeo6246ldkp9j6uthurnn5dde.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.graduation_project",
+            "certificate_hash": "ba6972b5af0efbcfb3999f29694f667c6814c46e"
+          }
+        },
+        {
+          "client_id": "984320095104-14fk92umsq18t1j1v3r8e706e53jp90k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgZJkbmvzPpDvpHhCAaqVFDqjSUOJkpFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "984320095104-14fk92umsq18t1j1v3r8e706e53jp90k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "984320095104-l1bj5nlo6v3r7endpeprgag6ol8kfbs9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.graduationProject"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984320095104:android:4085fa6034f0ffc512c765",
+        "android_client_info": {
+          "package_name": "com.example.grauation_project_dashboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "984320095104-14fk92umsq18t1j1v3r8e706e53jp90k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgZJkbmvzPpDvpHhCAaqVFDqjSUOJkpFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "984320095104-14fk92umsq18t1j1v3r8e706e53jp90k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "984320095104-l1bj5nlo6v3r7endpeprgag6ol8kfbs9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.graduationProject"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

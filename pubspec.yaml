@@ -7,13 +7,25 @@ environment:
   sdk: ^3.6.1
 
 dependencies:
+  firebase_core: ^3.13.0
   flutter:
     sdk: flutter
+  font_awesome_flutter: ^10.8.0
 
 dev_dependencies:
+  flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true
+
+  fonts:
+    - family: Judson
+      fonts:
+        - asset: assets/fonts/Judson-Regular.ttf
+        - asset: assets/fonts/Judson-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Judson-Italic.ttf
+          style: italic
+
