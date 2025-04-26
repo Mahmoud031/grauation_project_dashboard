@@ -13,9 +13,6 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        fontFamily: 'Judson',
-      ),
       initialRoute: DashboardView.routeName,
       onGenerateRoute: onGenerateRoutes,
       debugShowCheckedModeBanner: false,

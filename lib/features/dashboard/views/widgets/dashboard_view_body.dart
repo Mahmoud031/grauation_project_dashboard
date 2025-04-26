@@ -3,7 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:grauation_project_dashboard/features/dashboard/views/manage_members_view.dart';
 import 'package:grauation_project_dashboard/features/dashboard/views/widgets/dashboard_card.dart';
 
-import 'manage_members_view_body.dart';
+import '../manage_ngos_view.dart';
+
 
 class DashboardViewBody extends StatelessWidget {
   const DashboardViewBody({super.key});
@@ -19,9 +20,10 @@ class DashboardViewBody extends StatelessWidget {
             icon: FontAwesomeIcons.users,
             color: Colors.blue,
             onTap: () {
-              Navigator.pushNamed(
-                context,
-                ManageMembersView.routeName,
+              Navigator.pushReplacement(context, 
+                MaterialPageRoute(
+                  builder: (context) => const ManageMembersView(),
+                ),
               );
             },
           ),
@@ -30,7 +32,13 @@ class DashboardViewBody extends StatelessWidget {
             title: 'Manage NGOs',
             icon: FontAwesomeIcons.handshakeAngle,
             color: Colors.green,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushReplacement(context, 
+                MaterialPageRoute(
+                  builder: (context) => const ManageNgosView(),
+                ),
+              );
+            },
           ),
           const SizedBox(height: 16),
           DashboardCard(

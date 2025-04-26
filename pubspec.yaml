@@ -20,12 +20,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  fonts:
-    - family: Judson
-      fonts:
-        - asset: assets/fonts/Judson-Regular.ttf
-        - asset: assets/fonts/Judson-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/Judson-Italic.ttf
-          style: italic
+  
+        
 
