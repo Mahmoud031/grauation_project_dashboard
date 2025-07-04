@@ -1,13 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class MessagesFromDonorsViewBody extends StatelessWidget {
-  const MessagesFromDonorsViewBody({super.key});
+class MessagesFromNgosViewBody extends StatelessWidget {
+  const MessagesFromNgosViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-      stream: FirebaseFirestore.instance.collection('messages').snapshots(),
+      stream: FirebaseFirestore.instance.collection('ngo_messages').snapshots(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
@@ -71,7 +71,7 @@ class MessagesFromDonorsViewBody extends StatelessWidget {
                             if (confirm == true) {
                               try {
                                 await FirebaseFirestore.instance
-                                    .collection('messages')
+                                    .collection('ngo_messages')
                                     .doc(doc.id)
                                     .delete();
                                 ScaffoldMessenger.of(context).showSnackBar(
@@ -139,7 +139,7 @@ class _ResponseFormState extends State<_ResponseForm> {
     });
     try {
       await FirebaseFirestore.instance
-          .collection('messages')
+          .collection('ngo_messages')
           .doc(widget.messageId)
           .collection('responses')
           .add({
@@ -147,6 +147,7 @@ class _ResponseFormState extends State<_ResponseForm> {
         'timestamp': FieldValue.serverTimestamp(),
       });
       _controller.clear();
+      if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Response sent!')),
       );

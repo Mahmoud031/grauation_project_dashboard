@@ -4,6 +4,8 @@ import 'package:grauation_project_dashboard/features/manage_memebers/presentatio
 import 'package:grauation_project_dashboard/features/dashboard/views/widgets/dashboard_card.dart';
 
 import '../../../manage_ngo/presentation/views/manage_ngos_view.dart';
+import '../../../messages/presentation/views/messages_from_donors_view.dart';
+import '../../../messages/presentation/views/messages_from_ngos_view.dart';
 
 class DashboardViewBody extends StatelessWidget {
   const DashboardViewBody({super.key});
@@ -19,12 +21,7 @@ class DashboardViewBody extends StatelessWidget {
             icon: FontAwesomeIcons.users,
             color: Colors.blue,
             onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ManageMembersView(),
-                ),
-              );
+              Navigator.pushNamed(context, ManageMembersView.routeName);
             },
           ),
           const SizedBox(height: 16),
@@ -33,12 +30,7 @@ class DashboardViewBody extends StatelessWidget {
             icon: FontAwesomeIcons.handshakeAngle,
             color: Colors.green,
             onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ManageNgosView(),
-                ),
-              );
+              Navigator.pushNamed(context, ManageNgosView.routeName);
             },
           ),
           const SizedBox(height: 16),
@@ -46,14 +38,18 @@ class DashboardViewBody extends StatelessWidget {
             title: 'Messages from Ngos',
             icon: FontAwesomeIcons.solidMessage,
             color: Colors.red,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, MessagesFromNgosView.routeName);
+            },
           ),
           const SizedBox(height: 16),
           DashboardCard(
             title: 'Messages from donors',
             icon: FontAwesomeIcons.message,
             color: Colors.orange,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, MessagesFromDonorsView.routeName);
+            },
           ),
           DashboardCard(
             title: 'Reporting',

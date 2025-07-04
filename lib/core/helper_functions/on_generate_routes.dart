@@ -5,6 +5,9 @@ import 'package:grauation_project_dashboard/features/manage_memebers/presentatio
 import 'package:grauation_project_dashboard/features/manage_ngo/presentation/views/manage_ngos_view.dart';
 import 'package:grauation_project_dashboard/features/manage_ngo/presentation/views/ngo_medicine_detalis_view.dart';
 
+import '../../features/messages/presentation/views/messages_from_donors_view.dart';
+import '../../features/messages/presentation/views/messages_from_ngos_view.dart';
+
 Route<dynamic> onGenerateRoutes(RouteSettings settings) {
   switch (settings.name) {
     case DashboardView.routeName:
@@ -26,6 +29,14 @@ Route<dynamic> onGenerateRoutes(RouteSettings settings) {
     case ManageNgosView.routeName:
       return MaterialPageRoute(
         builder: (context) => const ManageNgosView(),
+      );
+      case MessagesFromDonorsView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const MessagesFromDonorsView(),
+      );
+      case MessagesFromNgosView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const MessagesFromNgosView(),
       );
 
     default:

@@ -5,8 +5,15 @@ import 'package:grauation_project_dashboard/features/manage_ngo/presentation/cub
 import 'ngo_details.dart';
 import 'ngo_expansion_tile.dart';
 
-class ManageNgoViewBody extends StatelessWidget {
+class ManageNgoViewBody extends StatefulWidget {
   const ManageNgoViewBody({super.key});
+
+  @override
+  State<ManageNgoViewBody> createState() => _ManageNgoViewBodyState();
+}
+
+class _ManageNgoViewBodyState extends State<ManageNgoViewBody> {
+  String _searchQuery = '';
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +21,21 @@ class ManageNgoViewBody extends StatelessWidget {
       children: [
         const CustomAppBar(
           title: 'Manage Ngos',
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          child: TextField(
+            decoration: InputDecoration(
+              hintText: 'Search by name, email, phone, NGO ID, or address',
+              prefixIcon: const Icon(Icons.search),
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+            ),
+            onChanged: (value) {
+              setState(() {
+                _searchQuery = value.trim().toLowerCase();
+              });
+            },
+          ),
         ),
         Expanded(
           child: BlocBuilder<NgosCubit, NgosState>(
@@ -23,28 +45,39 @@ class ManageNgoViewBody extends StatelessWidget {
               } else if (state is NgosError) {
                 return Center(child: Text(state.message));
               } else if (state is NgosLoaded) {
+                final filteredNgos = _searchQuery.isEmpty
+                    ? state.ngos
+                    : state.ngos.where((ngo) {
+                        return ngo.name.toLowerCase().contains(_searchQuery) ||
+                            ngo.email.toLowerCase().contains(_searchQuery) ||
+                            ngo.phone.toLowerCase().contains(_searchQuery) ||
+                            ngo.ngoId.toLowerCase().contains(_searchQuery) ||
+                            ngo.address.toLowerCase().contains(_searchQuery);
+                      }).toList();
                 return Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: ListView.builder(
-                    itemCount: state.ngos.length,
-                    itemBuilder: (context, index) {
-                      final ngo = state.ngos[index];
-                      return Padding(
-                        padding: const EdgeInsets.only(bottom: 8.0),
-                        child: NgoExpansionTile(
-                          userName: '${index + 1}- ${ngo.name}',
-                          ngoDetails: NgoDetails(
-                            uId: ngo.uId,
-                            ngoId: ngo.ngoId,
-                            email: ngo.email,
-                            address: ngo.address,
-                            phone: ngo.phone,
-                          ),
-                          blocked: ngo.blocked,
+                  child: filteredNgos.isEmpty
+                      ? const Center(child: Text('No NGOs found.'))
+                      : ListView.builder(
+                          itemCount: filteredNgos.length,
+                          itemBuilder: (context, index) {
+                            final ngo = filteredNgos[index];
+                            return Padding(
+                              padding: const EdgeInsets.only(bottom: 8.0),
+                              child: NgoExpansionTile(
+                                userName: '${index + 1}- ${ngo.name}',
+                                ngoDetails: NgoDetails(
+                                  uId: ngo.uId,
+                                  ngoId: ngo.ngoId,
+                                  email: ngo.email,
+                                  address: ngo.address,
+                                  phone: ngo.phone,
+                                ),
+                                blocked: ngo.blocked,
+                              ),
+                            );
+                          },
                         ),
-                      );
-                    },
-                  ),
                 );
               }
               return const SizedBox();
