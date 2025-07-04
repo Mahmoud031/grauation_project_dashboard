@@ -39,10 +39,10 @@
               "client_type": 3
             },
             {
-              "client_id": "984320095104-l1bj5nlo6v3r7endpeprgag6ol8kfbs9.apps.googleusercontent.com",
+              "client_id": "984320095104-6f84d6h37ccdeutc9nbvp41e3vhkcog5.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.graduationProject"
+                "bundle_id": "com.example.grauationProjectDashboard"
               }
             }
           ]
@@ -75,10 +75,10 @@
               "client_type": 3
             },
             {
-              "client_id": "984320095104-l1bj5nlo6v3r7endpeprgag6ol8kfbs9.apps.googleusercontent.com",
+              "client_id": "984320095104-6f84d6h37ccdeutc9nbvp41e3vhkcog5.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.graduationProject"
+                "bundle_id": "com.example.grauationProjectDashboard"
               }
             }
           ]

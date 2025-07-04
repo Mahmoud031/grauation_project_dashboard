@@ -89,4 +89,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'graduation-project-214bf.firebasestorage.app',
     measurementId: 'G-NLVGE3QS5P',
   );
+
 }

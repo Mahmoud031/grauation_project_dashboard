@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:grauation_project_dashboard/core/utils/app_text_styles.dart';
-import 'medicine_details_section.dart';
 import 'ngo_details.dart';
+import 'ngo_medicine_details_section.dart';
 
 class NgoExpansionTile extends StatelessWidget {
   final String userName;
   final NgoDetails ngoDetails;
+  final bool blocked;
 
   const NgoExpansionTile({
     super.key,
     required this.userName,
     required this.ngoDetails,
+    required this.blocked,
   });
 
   @override
@@ -26,7 +28,10 @@ class NgoExpansionTile extends StatelessWidget {
               )),
           children: [
             ngoDetails,
-            const MedicineDetailsSection(),
+            NgoMedicineDetailsSection(
+              ngoId: ngoDetails.uId,
+              blocked: blocked,
+            ),
           ],
         ),
       ),

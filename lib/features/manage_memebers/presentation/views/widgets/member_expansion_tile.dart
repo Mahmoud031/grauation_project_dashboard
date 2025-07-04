@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:grauation_project_dashboard/core/utils/app_text_styles.dart';
 
-import 'medicine_details_section.dart';
+import '../../../../dashboard/views/widgets/member_medicine_details_section.dart';
 import 'member_details.dart';
 
 class MemberExpansionTile extends StatelessWidget {
   final String userName;
   final MemberDetails memberDetails;
+  final bool blocked;
 
   const MemberExpansionTile({
     super.key,
     required this.userName,
     required this.memberDetails,
+    required this.blocked,
   });
 
   @override
@@ -27,7 +29,10 @@ class MemberExpansionTile extends StatelessWidget {
               )),
           children: [
             memberDetails,
-            const MedicineDetailsSection(),
+            MemberMedicineDetailsSection(
+              memberId: memberDetails.memberId,
+              blocked: blocked,
+            ),
           ],
         ),
       ),

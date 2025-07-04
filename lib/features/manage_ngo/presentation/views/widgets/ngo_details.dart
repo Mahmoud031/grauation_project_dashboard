@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-import 'detail_row.dart';
+import '../../../../dashboard/views/widgets/detail_row.dart';
 
 class NgoDetails extends StatelessWidget {
-  final String ngoId;
-  final String ngoCode;
-  final String contactNo;
+  final String uId;
   final String email;
+  final String phone;
+  final String ngoId;
   final String address;
 
   const NgoDetails({
     super.key,
-    required this.ngoId,
-    required this.ngoCode,
-    required this.contactNo,
+    required this.uId,
     required this.email,
+    required this.phone,
+    required this.ngoId,
     required this.address,
   });
 
@@ -25,9 +25,9 @@ class NgoDetails extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          DetailRow(label: 'UId', value: uId),
           DetailRow(label: 'Ngo ID', value: ngoId),
-          DetailRow(label: 'Ngo Code', value: ngoCode),
-          DetailRow(label: 'Contact No', value: contactNo),
+          DetailRow(label: 'Contact No', value: phone),
           DetailRow(label: 'E-mail', value: email),
           DetailRow(label: 'Address', value: address),
         ],

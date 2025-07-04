@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:grauation_project_dashboard/features/dashboard/views/manage_members_view.dart';
+import 'package:grauation_project_dashboard/features/manage_memebers/presentation/views/manage_members_view.dart';
 import 'package:grauation_project_dashboard/features/dashboard/views/widgets/dashboard_card.dart';
 
-import '../manage_ngos_view.dart';
-
+import '../../../manage_ngo/presentation/views/manage_ngos_view.dart';
 
 class DashboardViewBody extends StatelessWidget {
   const DashboardViewBody({super.key});
@@ -20,7 +19,8 @@ class DashboardViewBody extends StatelessWidget {
             icon: FontAwesomeIcons.users,
             color: Colors.blue,
             onTap: () {
-              Navigator.pushReplacement(context, 
+              Navigator.pushReplacement(
+                context,
                 MaterialPageRoute(
                   builder: (context) => const ManageMembersView(),
                 ),
@@ -33,7 +33,8 @@ class DashboardViewBody extends StatelessWidget {
             icon: FontAwesomeIcons.handshakeAngle,
             color: Colors.green,
             onTap: () {
-              Navigator.pushReplacement(context, 
+              Navigator.pushReplacement(
+                context,
                 MaterialPageRoute(
                   builder: (context) => const ManageNgosView(),
                 ),
@@ -42,12 +43,18 @@ class DashboardViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           DashboardCard(
-            title: 'Manage Approval',
-            icon: FontAwesomeIcons.circleCheck,
-            color: Colors.orange,
+            title: 'Messages from Ngos',
+            icon: FontAwesomeIcons.solidMessage,
+            color: Colors.red,
             onTap: () {},
           ),
           const SizedBox(height: 16),
+          DashboardCard(
+            title: 'Messages from donors',
+            icon: FontAwesomeIcons.message,
+            color: Colors.orange,
+            onTap: () {},
+          ),
           DashboardCard(
             title: 'Reporting',
             icon: FontAwesomeIcons.chartBar,
