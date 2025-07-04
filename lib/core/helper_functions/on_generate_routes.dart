@@ -7,6 +7,7 @@ import 'package:grauation_project_dashboard/features/manage_ngo/presentation/vie
 
 import '../../features/messages/presentation/views/messages_from_donors_view.dart';
 import '../../features/messages/presentation/views/messages_from_ngos_view.dart';
+import '../../features/reports/presentation/views/reports_view.dart';
 
 Route<dynamic> onGenerateRoutes(RouteSettings settings) {
   switch (settings.name) {
@@ -37,6 +38,10 @@ Route<dynamic> onGenerateRoutes(RouteSettings settings) {
       case MessagesFromNgosView.routeName:
       return MaterialPageRoute(
         builder: (context) => const MessagesFromNgosView(),
+      );
+      case ReportsView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const ReportsView(),
       );
 
     default:

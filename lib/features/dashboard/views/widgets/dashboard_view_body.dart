@@ -6,6 +6,7 @@ import 'package:grauation_project_dashboard/features/dashboard/views/widgets/das
 import '../../../manage_ngo/presentation/views/manage_ngos_view.dart';
 import '../../../messages/presentation/views/messages_from_donors_view.dart';
 import '../../../messages/presentation/views/messages_from_ngos_view.dart';
+import '../../../reports/presentation/views/reports_view.dart';
 
 class DashboardViewBody extends StatelessWidget {
   const DashboardViewBody({super.key});
@@ -55,7 +56,9 @@ class DashboardViewBody extends StatelessWidget {
             title: 'Reporting',
             icon: FontAwesomeIcons.chartBar,
             color: Colors.purple,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, ReportsView.routeName);
+            },
           ),
         ],
       ),
